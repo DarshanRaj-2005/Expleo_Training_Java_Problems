@@ -17,7 +17,6 @@ public class Example4_in_Quiz extends Base_3 {
 
 	public static void main(String[] args) {
 
-		new Example4_in_Quiz();
 	}
 
 }
