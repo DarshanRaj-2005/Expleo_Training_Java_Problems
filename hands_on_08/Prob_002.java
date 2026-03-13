@@ -6,9 +6,15 @@ class InvalidUsernameException extends Exception {
 		super(message);
 	}
 }
+
+class InvalidPasswordException extends Exception {
+	public InvalidPasswordException(String message) {
+		super(message);
+	}
+}
 public class Prob_002 {
 	
-	public String getMessage(String username, String password) throws InvalidUsernameException  {
+	public String getMessage(String username, String password) throws InvalidUsernameException, InvalidPasswordException  {
 		
 		if (username.length() < 6 || username.length() > 30) {
 			throw new InvalidUsernameException("Invalid Username");
@@ -23,6 +29,17 @@ public class Prob_002 {
 		if (!Character.isLetter(username.charAt(0))) {
 			throw new InvalidUsernameException("Invalid Username");
 		}
+		
+		for(int i=0;i<password.length();i++) {
+			if (!Character.isLetterOrDigit(password.charAt(i))) {
+				throw new InvalidPasswordException("Invalid Password");
+			}
+		}
+		
+		if(password.length() < 8) {
+			throw new InvalidPasswordException("Invalid Password");
+		}
+		
 				return "Welcome "+username ;
 }
 		
