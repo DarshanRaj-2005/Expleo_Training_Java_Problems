@@ -1,4 +1,4 @@
-package hands_on_08;
+package Java_Basics;
 
 public class GenericBoundedType1 {
 

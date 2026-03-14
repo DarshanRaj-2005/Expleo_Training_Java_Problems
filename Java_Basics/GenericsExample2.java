@@ -1,4 +1,4 @@
-package hands_on_08;
+package Java_Basics;
 
 class Test<T,U,R> {
 	public T obj1;

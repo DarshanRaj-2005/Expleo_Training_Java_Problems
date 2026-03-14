@@ -16,6 +16,9 @@ public class Prob_002 {
 	
 	public String getMessage(String username, String password) throws InvalidUsernameException, InvalidPasswordException  {
 		
+		String storedUsername = "Darshan_12";
+		String storedPassword = "Darshan@123";
+		
 		if (username.length() < 6 || username.length() > 30) {
 			throw new InvalidUsernameException("Invalid Username");
 		}
@@ -30,17 +33,43 @@ public class Prob_002 {
 			throw new InvalidUsernameException("Invalid Username");
 		}
 		
+		boolean digit = false;
+		boolean upCase = false;
+		boolean lowCase = false;
+		boolean symbol = false;
+		
+		String sp="!@#$%^&*()-+";
+		
 		for(int i=0;i<password.length();i++) {
-			if (!Character.isLetterOrDigit(password.charAt(i))) {
-				throw new InvalidPasswordException("Invalid Password");
+			
+			char ch = password.charAt(i);
+			
+			if(Character.isDigit(ch)) {
+				digit = true;
+			}
+			if(Character.isUpperCase(ch)) {
+				upCase = true;
+			}
+			if(Character.isLowerCase(ch)) {
+				lowCase = true;
+			}
+			if(sp.contains(String.valueOf(ch))) {
+				symbol = true;
 			}
 		}
 		
-		if(password.length() < 8) {
+		if(password.length() >= 8 || !digit ||
+				!lowCase || !upCase|| !symbol) {
 			throw new InvalidPasswordException("Invalid Password");
 		}
 		
-				return "Welcome "+username ;
+		
+		if (username.equals(storedUsername) && password.equals(storedPassword)) {
+			return "Welcome "+username ;
+		}
+		else {
+			return "Invalid username or password";
+		}
 }
 		
 	public static void main(String[] args) {
