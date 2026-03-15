@@ -1,6 +1,8 @@
 package hands_on_08;
 import java.util.Scanner;
 
+/*To Check username and password */
+
 class InvalidUsernameException extends Exception {
 	public InvalidUsernameException(String message) {
 		super(message);

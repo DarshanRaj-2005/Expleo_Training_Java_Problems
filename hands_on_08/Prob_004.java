@@ -2,6 +2,8 @@ package hands_on_08;
 
 import java.util.Scanner;
 
+/* Checking debit payment */
+
 class PayOutOfBoundsException extends Exception {
 	public PayOutOfBoundsException(String message) {
 		super(message);
