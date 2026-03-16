@@ -1,6 +1,7 @@
 package hands_on_08;
 import java.util.Scanner;
 
+/* Creating invoice for a product */
 class Invoice {
 
     int partNumber;
